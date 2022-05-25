@@ -4,73 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        function computerPlay() {
-            const randInt = Math.floor(Math.random() * 3) + 1
-            
-            if (randInt === 1) {
-                return "Rock"
-            } else if (randInt === 2){
-                return "Paper"
-            } else {
-                return "Scissors"
-            }
-        }
-
-        function userInput() {
-            let input = parseInt(prompt("1. Rock \n 2. Paper \n 3. Scissos"))
-
-            if (input === 1){
-                return "Rock"
-            } else if (input === 2){
-                return "Paper"
-            } else if (input === 3){
-                return "Scissors"
-            } else {
-                return undefined
-            }
-        }
-
-        function playGame() {
-            let userChoice = userInput()
-            let compChoice = computerPlay()
-            if (userChoice === compChoice){
-                alert("It's a draw!!!") 
-            } else if (userChoice === "Rock" && compChoice === "Scissors") {
-                alert(`You win! ${userChoice} beats ${compChoice}`)
-            } else if (userChoice === "Rock" && compChoice === "Paper") {
-                alert(`You lose! ${compChoice} beats ${userChoice}`)
-            } else if (userChoice === "Paper" && compChoice === "Scissors") {
-                alert(`You lose! ${compChoice} beats ${userChoice}`)
-            } else if (userChoice === "Paper" && compChoice === "Rock") {
-                alert(`You win! ${userChoice} beats ${compChoice}`)
-            } else if (userChoice === "Scissors" && compChoice === "Paper") {
-                alert(`You win! ${userChoice} beats ${compChoice}`)
-            } else if (userChoice === "Scissors" && compChoice === "Rock") {
-                alert(`You lose! ${compChoice} beats ${userChoice}`)
-            } else if (userChoice === undefined) {
-                alert ("Invalid user input")
-            }
-
-            restart()
-        }
-
-        function restart() {
-            let userRestart = prompt("Do you want to play again? y/n", "y")
-
-            if (userRestart === "y") {
-                playGame()
-            } else if (userRestart === "n") {
-                alert("Thanks for playing!")
-            } else {
-                alert("Invalid input")
-            }
-        }
-
-        playGame()
-    </script>
+    <div class="btn-container">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+    </div>
+    <div class="result-section">
+        <div class="win score">Win: 0</div>
+        <div class="lose score">Lose: 0</div>
+        <div class="result"></div>
+    </div>
 </body>
 </html>
