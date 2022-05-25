@@ -50,8 +50,11 @@ button:hover {
     align-items: center;
 }
 
+.lose {
+    margin-bottom: 2rem;
+}
+
 .result {
-    margin-top: 2rem;
     font-size: 1.3rem;
 }
 
